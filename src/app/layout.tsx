@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       
       <body className={finger_paint.className}>
-        <div className=''>
+        <div className='bg-gradient-to-t from-cyan-950 to-slate-950'>
           <Navbar/>
           {children}
           <Footer/>

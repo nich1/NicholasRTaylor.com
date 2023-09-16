@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="flex min-h-screen flex-col items-center  p-24">
+        <footer className="flex  flex-col items-center  p-24">
             <h3>
                 Made By: Nick Taylor
             </h3>
