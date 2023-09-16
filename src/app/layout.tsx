@@ -3,11 +3,26 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { Press_Start_2P } from 'next/font/google'
+import {Cinzel} from 'next/font/google'
+import {Roboto} from 'next/font/google'
+import {Oxygen} from 'next/font/google'
+import { Finger_Paint } from 'next/font/google'
+const finger_paint = Finger_Paint({subsets:['latin'], weight:['400']})
+const press_start_2p = Press_Start_2P({
+  subsets: ['latin'],
+  weight: ['400']
+})
+
+const oxygen = Oxygen({
+  subsets: ['latin'],
+  weight: ['400']
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Nicks Blog',
+  title: 'Nick Taylor, Web Developer',
   description: 'Technology, fitness, lifestyle',
 }
 
@@ -18,10 +33,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+      
+      <body className={finger_paint.className}>
+        <div className=''>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </div>
+        
       </body>
     </html>
   )
