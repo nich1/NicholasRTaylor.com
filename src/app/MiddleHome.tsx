@@ -6,6 +6,7 @@ export default function MiddleHome() {
                 <div className=" my-4 text-9xl">Hey I'm <span className="text-cyan-400 font-bold">Nick</span>, </div>
                 <div className="  text-9xl">Web Developer,</div>
                 <p className="  text-5xl underline">Computer Science student</p>
+
             </div>
             <div>
                 <ul className=" pl-40 pt-16 text-5xl text-white-400">
