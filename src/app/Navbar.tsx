@@ -6,7 +6,7 @@ export default function Navbar() {
             <ul className=' text-2xl flex justify-end w-2/5'>
                 <li className='hover:underline hover:text-white text-3xl mx-6'><Link href="/contact">Contact</Link></li>
                 <li className=' hover:underline hover:text-white text-3xl mx-6'><Link href="/projects">Projects</Link></li>
-                <li className=' hover:underline hover:text-white text-3xl mx-6'><Link href="/blog">Blog</Link></li>
+                <li className=' hover:underline hover:text-white text-3xl mx-6'><a target="_blank" href="nrt.com">Blog</a></li>
                 <li  className=" hover:text-white mx-6 underline underline-offset-8 font-bold  decoration-white">Download CV</li>
             </ul>
         </nav>

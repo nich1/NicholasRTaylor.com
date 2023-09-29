@@ -14,9 +14,6 @@ export default function About() {
 
         
             <div className="flex justify-end  w-full">
-                <div >
-
-                </div>
                 <div className=" text-center  bg-slate-900 shadow-2xl  ">
                     <div className=" text-cyan-400  ">
                         <div className=" py-6 text-center text-8xl">What I've Worked With</div>
