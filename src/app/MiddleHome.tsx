@@ -3,7 +3,7 @@ export default function MiddleHome() {
     return (
         <div className="px-40 pt-32 pb-40 flex justify-left w-full">
             <div className=" backgroun">
-                <div className=" my-4 text-9xl">Hey I'm <span className="text-cyan-400 font-bold">Nick</span>, </div>
+                <div className=" my-4 text-9xl">Hey I&apos;m <span className="text-cyan-400 font-bold">Nick</span>, </div>
                 <div className="  text-9xl">Web Developer,</div>
                 <p className="  text-5xl underline">Computer Science student</p>
 

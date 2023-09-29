@@ -4,7 +4,7 @@ export default function Stack() {
     return (
         <div className="flex flex-col">
             <div className=" px-32 pb-10 text-3xl">
-                <p>Some Tools I've Worked With:</p>
+                <p>Some Tools I&apos;ve Worked With:</p>
             </div>
             <div className="flex justify-evenly pb-40">
                 <Link href=""><Image src="/typescript.png" width={150} height={150} alt="TypeScript"/></Link>
