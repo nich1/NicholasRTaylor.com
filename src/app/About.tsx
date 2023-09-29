@@ -100,7 +100,7 @@ export default function About() {
                             unmarshalling JSON files, REST, and back-end frameworks. The back-end framework I learned was <a href="https://github.com/gin-gonic/gin" target="_blank" className=" font-bold underline">Gin</a> written for Golang, a language I acquired a strong taste for at the end of my &quot;Language Learning Arc.&quot;
                         </p>
                         <p className="py-6">
-                            I am now a Junior, and this year I've been focusing on creating several projects with my accumulated knowledge over the years. I&apos;ve found with time that I enjoy and gravitate towards web development, and I am excited to create more web development related projects this year. Some of the tools I've become much more familiar with this
+                            I am now a Junior, and this year I&apos;ve been focusing on creating several projects with my accumulated knowledge over the years. I&apos;ve found with time that I enjoy and gravitate towards web development, and I am excited to create more web development related projects this year. Some of the tools I&apos;ve become much more familiar with this
                 
                             year have been AWS, Postgres, React, Next, Golang, and C. You can find out more about the projects I&apos;ve worked on in the <Link href="/projects" className=" font-bold underline">projects tab</Link>. You can contact and connect with me in the <Link href="/contact" className=" font-bold underline">contact tab</Link>.
                         </p>
