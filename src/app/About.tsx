@@ -51,7 +51,7 @@ export default function About() {
                         <div className="  flex text-5xl">
                                 <div className="  flex-1">Auth</div>
                                 <div className="  flex-1">Gin</div>
-                                <div className="  flex-1">Gin</div>
+                                <div className="  flex-1">Svelte</div>
                                 <div className="  flex-1">Pandas</div>
                                 <div className="  flex-1">NumPy</div>
                         </div>
