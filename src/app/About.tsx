@@ -11,8 +11,6 @@ const oxygen = Oxygen({
 export default function About() {
     return (
         <div className={oxygen.className}>
-
-        
             <div className="flex justify-end  w-full">
                 <div className=" text-center  bg-slate-900 shadow-2xl  ">
                     <div className=" text-cyan-400  ">
