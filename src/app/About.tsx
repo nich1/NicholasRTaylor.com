@@ -74,7 +74,7 @@ export default function About() {
 
                         <div className="  mb-8 text-8xl text-cyan-400">About Me</div>
                         <p className=" px-60 text-4xl ">
-                            I&apos;m a computer science junior at the University of North Texas. I&apos;ve been coding since I was a kid. The foundations
+                            I&apos;m a computer science undergraduate at the University of North Texas. I&apos;ve been coding since I was a kid. The foundations
                             I&apos;ve built in my youth have been vital to my current knowledge of Web Development and Software Engineering. 
                             I&apos;m currently looking for internship and employment opportunities. The tools I&apos;ve learned to make this website are TypeScript/JavaScript,
                             AWS (Amplify and RDS), Prisma ORM, and Postgres database. While I have been learning frameworks and solutions related to
@@ -88,7 +88,17 @@ export default function About() {
                             a strong development community, it can be difficult to make direct swaps with currently existing solutions.
                             Instead, I now monitor the communities of newer technologies while passively learning new solutions.
                         </p>
-                        
+                        <p className=" px-60 text-4xl ">
+                            Some notable classes I've taken:
+                            <ul>
+                                <li>Systems Programming</li>
+                                <li>Video Game Programming</li>
+                                <li>Data Structures and Algorithms</li>
+                                <li>Foundations of Data Structures</li>
+                                <li>Foundations of Computing</li>
+                            </ul>
+
+                        </p>
                         
                         
                             
