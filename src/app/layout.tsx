@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={finger_paint.className}>
+      <body className={oxygen.className}>
         <div className='bg-gradient-to-t from-cyan-950 to-slate-950'>
           <Navbar/>
           {children}

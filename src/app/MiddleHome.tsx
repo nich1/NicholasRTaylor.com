@@ -5,14 +5,15 @@ export default function MiddleHome() {
             <div className=" backgroun">
                 <div className=" my-4 text-9xl">Hey I&apos;m <span className="text-cyan-400 font-bold">Nick</span>, </div>
                 <div className="  text-9xl">Web Developer,</div>
-                <p className="  text-5xl underline">Computer Science student</p>
+                <p className="  text-5xl underline">Computer Science Student</p>
 
             </div>
             <div>
                 <ul className=" pl-40 pt-16 text-5xl text-white-400">
                     <li className="my-5">- Web Servers</li>
-                    <li className="my-5">- Interfaces</li>
+                    <li className="my-5">- Software Development</li>
                     <li className="my-5">- Databases</li>
+                    
                 </ul>
             </div>
             

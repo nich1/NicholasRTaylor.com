@@ -12,7 +12,8 @@ export default function Projects() {
             <a className=" text-xl underline" target="_blank" href="https://github.com/nich1/NicholasRTaylor.com">https://github.com/nich1/NicholasRTaylor.com</a>
           </div>
           <div className=' text-2xl px-8 w-2/3 '>Serves as a central hub to all my projects, connection links, and general information. Built with React, 
-          Next, and AWS. A modern, traditional approach to site building. Static site (for now!)</div>
+          Next, AWS, Postgres, Prisma. A modern, traditional approach to site building. Where I can discuss problems, interests, and all things related to development.
+          Blog posts have accounts, posts, comments and interact with a database.Technologies picked for building comes down to personal interest.</div>
         </div>
 
         <div className='m-14 flex justify-left'>
@@ -26,15 +27,7 @@ export default function Projects() {
           <div className=' text-2xl px-8 w-2/3 '> Personal server / drive. Long term project where a desktop and mobile interface will be created for uploading, downloading, viewing, and editing files. There will also be a build in scheduler as an API for future server functions. </div>
         </div>
 
-        <div className='m-14 flex justify-left'>
-          <div className='border-r w-1/3'>
-            <div className=' text-cyan-400 text-5xl'>Blog Website</div>
-            <div className=' text-2xl'>Status: <span className=' text-red-500'>Not Started</span></div>
-
-          </div>
-          <div className=' text-2xl px-8 w-2/3 '>Where I can discuss problems, interests, and all things related to development.
-          Blog posts have accounts, posts, comments and interact with a database.Technologies picked for building comes down to personal interest. Svelte, Next, Postgres, Auth, Postgres </div>
-        </div>
+        
 
         <div className='m-14 flex justify-left'>
           <div className='border-r w-1/3'>
