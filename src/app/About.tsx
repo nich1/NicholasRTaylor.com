@@ -83,13 +83,13 @@ export default function About() {
                         <p className=" py-16 px-60 text-4xl ">
                             I believe in a fine balance between cutting edge technologies and technologies that have stood the test of time and have strong ecosystems. While new technologies are typically
                             worth learning, having secure, industry proven 
-                            technologies is what I aim to use in production-level products. This is a mentality shift I've had to make in recent years, 
+                            technologies is what I aim to use in production-level products. This is a mentality shift I&apos;ve had to make in recent years, 
                             as I found myself learning new concepts and technologies that were conceptually powerful, and practically useful, yet without
                             a strong development community, it can be difficult to make direct swaps with currently existing solutions.
                             Instead, I now monitor the communities of newer technologies while passively learning new solutions.
                         </p>
                         <p className=" px-60 text-4xl ">
-                            Some notable classes I've taken:
+                            Some notable classes I&apos;ve taken:
                             <ul>
                                 <li>Systems Programming</li>
                                 <li>Video Game Programming</li>
