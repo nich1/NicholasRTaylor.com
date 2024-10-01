@@ -27,9 +27,9 @@ export default function AboutMe() {
                 <div className='w-1/3 pl-8'>
                 <div ref={ref} className='text-8xl text-red-600'>About Me</div>
                     <div  className=' font-bold text-left pb-3 text-4xl'>Brief Introduction</div> 
-                    <div className='pb-2 text-xl text-neutral-600'>I've always been fascinated by software that deals with the internet. I've created a handful of projects to demonstrate some of my knowledge.</div>
+                    <div className='pb-2 text-xl text-neutral-600'>I&aposve always been fascinated by software that deals with the internet. I&aposve created a handful of projects to demonstrate some of my knowledge.</div>
                     
-                    <div className='pb-2 text-xl text-neutral-600'>I'm in my senior year at the University of North Texas.</div>
+                    <div className='pb-2 text-xl text-neutral-600'>I&aposm in my senior year at the University of North Texas.</div>
                     <div className="text-neutral-600 text-xl">
                         Currently seeking internship experience, employment, or an environment where I can grow within the industry.</div>
                     <ContactButton/>
@@ -47,7 +47,7 @@ export default function AboutMe() {
                         <SkillCard title="Pandas"/>
 
                     </div>
-                        <div className='text-left pl-1 text-2xl pt-2 text-neutral-600'>Languages I've Written In</div>
+                        <div className='text-left pl-1 text-2xl pt-2 text-neutral-600'>Languages I&aposve Written In</div>
                     <div className='flex flex-wrap'>
                         <SkillCard title="C++"/>
                         <SkillCard title="Java"/>   
