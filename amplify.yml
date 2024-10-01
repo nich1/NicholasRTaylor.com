@@ -9,7 +9,7 @@ frontend:
     preBuild:
       commands:
         - rm -rf node_modules
-        - nvm install 16
+        - nvm install 18.17.0
         - npm install
 
         - node -v
