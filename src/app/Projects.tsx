@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import SkillCard from './SkillCard'
 import Project from './Project'
 
