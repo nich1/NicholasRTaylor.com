@@ -1,15 +1,21 @@
-import Image from 'next/image'
-import Navbar from './Navbar'
-import MiddleHome from './MiddleHome'
-import About from './About'
-import Stack from './Stack'
-
+import Image from "next/image";
+import Navbar from "./Navbar";
+import MiddleHome from "./MiddleHome";
+import AccoladeList from "./AccoladeList";
+import AboutMe from "./AboutMe";
+import Education from "./Education";
+import Projects from "./Projects";
+import Contact from "./Contact";
 export default function Home() {
   return (
-    <main>
+    <main className="!scroll-smooth">
+      <Navbar/>
       <MiddleHome/>
-      <Stack/>
-      <About/>
+      <AccoladeList/>
+      <AboutMe/>
+      <Projects/>
+      <Education/>
+      <Contact/>
     </main>
-  )
+  );
 }

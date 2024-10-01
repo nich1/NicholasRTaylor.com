@@ -1,22 +1,21 @@
 export default function MiddleHome() {
-    // old color for first div: bg-slate-900 bg-[url('bg.jpg')]
     return (
-        <div className="px-40 pt-32 pb-40 flex justify-left w-full">
-            <div className=" backgroun">
-                <div className=" my-4 text-9xl">Hey I&apos;m <span className="text-cyan-400 font-bold">Nick</span>, </div>
-                <div className="  text-9xl">Web Developer,</div>
-                <p className="  text-5xl underline">Computer Science Student</p>
-
-            </div>
-            <div>
-                <ul className=" pl-40 pt-16 text-5xl text-white-400">
-                    <li className="my-5">- Web Servers</li>
-                    <li className="my-5">- Software Development</li>
-                    <li className="my-5">- Databases</li>
-                    
-                </ul>
-            </div>
+        <div className="  bg-white flex justify-center w-full pb-16">
             
+            <div className=" border-l-4 px-2 border-red-600">
+            
+            <div>
+                </div>
+                <div className=" my-4 text-9xl  text-black font-bold">
+                    Nick Taylor
+                </div>
+                <div className=" flex justify-left my-4 text-7xl text-red-600 font-bold">
+                    Software Engineer
+                </div>
+                <div className="underline h-4 decoration-red-600 underline-offset-8 ml-1 flex justify-left my-4 text-4xl text-black font-bold">
+                  B.S. CS Student
+                </div>
+            </div>
         </div>
         
     )

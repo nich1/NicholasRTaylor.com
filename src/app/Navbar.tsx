@@ -1,14 +1,12 @@
 import Link from 'next/link'
 export default function Navbar() {
     return (
-        <nav className="  text-cyan-400 shadow-2xl bg-slate-900 px-8 py-5  flex justify-between">
-            <div className=' hover:underline hover:text-white text-4xl '><Link href="/">Nicholas R Taylor.com</Link></div>
-            <ul className=' text-2xl flex justify-end w-2/5'>
-                <li className='hover:underline hover:text-white text-3xl mx-6'><Link href="/contact">Contact</Link></li>
-                <li className=' hover:underline hover:text-white text-3xl mx-6'><Link href="/projects">Projects</Link></li>
-                <li className=' hover:underline hover:text-white text-3xl mx-6'><a target="_blank" href="nrt.com">Blog</a></li>
-                <li  className=" hover:text-white mx-6 underline underline-offset-8 font-bold  decoration-white">Download CV</li>
+        <nav className="  bg-gradient-to-b from-neutral-200 text-black to-white text-white-400 shadow-2xl bg-black px-8  py-3 flex justify-end">
+            <ul className=' text-2xl flex justify-end'>
+                <li  className=" hover:underline mx-6 text-4xl underline underline-offset-8 decoration-red-600"><Link href="/contact">Contact</Link></li>
             </ul>
         </nav>
     )
 }
+
+// <li className=' hover:underline underline-offset-8 decoration-red-600 text-2xl mx-6'><a target="_blank" href="/projects">Projects</a></li>
