@@ -8,7 +8,9 @@ frontend:
   phases:
     preBuild:
       commands:
+        - rm -rf node_modules
         - nvm install 14
+        - npm install -g npm@latest
         - npm ci
         - node -v
     build:
