@@ -1,4 +1,9 @@
 version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - echo "Backend build not required"
 frontend:
   phases:
     preBuild:
@@ -15,3 +20,5 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+platform:
+  baseImage: "amazonlinux:2023"
