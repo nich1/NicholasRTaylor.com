@@ -9,7 +9,7 @@ frontend:
     preBuild:
       commands:
         - rm -rf node_modules
-        - nvm install 18
+        - nvm install 16
         - npm install
 
         - node -v
@@ -24,4 +24,4 @@ frontend:
     paths:
       - node_modules/**/*
 platform:
-  baseImage: "amazonlinux:2"
+  baseImage: "amazonlinux:2023"
