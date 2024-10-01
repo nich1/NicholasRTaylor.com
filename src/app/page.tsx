@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./Navbar";
 import MiddleHome from "./MiddleHome";
 import AccoladeList from "./AccoladeList";

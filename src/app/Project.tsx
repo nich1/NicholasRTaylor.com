@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import SkillCard from './SkillCard';
 
 interface ProjectProp {
     title: string;
