@@ -7,13 +7,13 @@ export default function Contact() {
             <div className='flex justify-around py-4'>
             <a target="_blank" href="https://github.com/nich1">     
                     <Image  className=''    
-                    src="/GitHub.png"
+                    src="/github.png"
                     width={150}
                     height={150}
                     alt="GitHub"
                 /></a> 
                 <Image  className=''    
-                                        src="/Email.png"
+                                        src="/email.png"
                                         width={150}
                                         height={150}
                                         alt="Email"
