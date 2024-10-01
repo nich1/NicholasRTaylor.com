@@ -24,4 +24,4 @@ frontend:
     paths:
       - node_modules/**/*
 platform:
-  baseImage: "amazonlinux:2023"
+  baseImage: "amazonlinux:2"
