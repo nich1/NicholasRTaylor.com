@@ -52,7 +52,7 @@ export default function AboutMe() {
                         <SkillCard title="React" />
                         <SkillCard title="Tailwind CSS" />
                         <SkillCard title="Next" />
-                        <SkillCard title="Prisma" />
+                        <SkillCard title="Flutter" />
                         <SkillCard title="Gin" />
                         <SkillCard title="NumPy" />
                         <SkillCard title="Pandas" />
