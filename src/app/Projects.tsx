@@ -25,7 +25,7 @@ export default function Projects() {
                                  
 
 
-                        <Project src="/brain.png" alt="brain" title="Nich Neuron" caption="Back-End Server Learning Project" description="Locally hosted personal server and database. Using Go's multithreading tools, the server concurrently hosts an FTP server, http server, email server, and a crono module for scheduled server functions. With these functionalities, this server seres similar functionality to Google Drive. No front-end was ever created, tested using Postman." />
+                        <Project src="/brain.png" alt="brain" title="Nich Neuron" caption="Back-End Server Learning Project" description="Locally hosted personal server and database. Using Go's multithreading tools, it concurrently hosts an FTP server, HTTP server, email server, and a crono module for scheduled server functions. With these functionalities, this server serves similar functionality to Google Drive. No front-end was ever created, tested using Postman." />
                         <div className='flex flex-wrap text-xl justify-center w-3/4 '>
                                     <SkillCard title="JSON"/>
                                     <SkillCard title="REST API"/>
