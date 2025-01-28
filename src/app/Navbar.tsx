@@ -1,4 +1,3 @@
-import Link from 'next/link'
 export default function Navbar() {
     return (
         <nav className="  bg-gradient-to-b from-neutral-200 text-black to-white text-white-400 shadow-2xl bg-black px-8  py-3 flex justify-end">
