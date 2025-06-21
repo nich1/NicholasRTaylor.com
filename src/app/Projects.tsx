@@ -5,7 +5,7 @@ import Project from './Project'
 export default function Projects() {
     return (
         <div className=" bg-neutral-100 w-full text-black">
-            <div className="pt-8 font-bold text-center text-red-600 text-7xl">Projects</div>
+            <div className="pt-8 font-bold text-center text-red-600 text-7xl">Personal Projects</div>
                         <Project src="/lock.png" alt="bit bastion icon" title="Bit Bastion" caption="CLI Encrypted File Tree + Password Manager" description="Portable encrypted file tree and password manager CLI written in Rust. Using a master password, users can manage their encrypted password manager and file tree. Encrypted with AES-GCM, the SHA256 hashed master password is used as the AES symmetric encryption key that unlocks program functionality. " />
                         <div className='flex text-xl flex-wrap justify-center w-3/4 '>
                                     <SkillCard title="Rust"/>

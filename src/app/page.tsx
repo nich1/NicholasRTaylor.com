@@ -5,6 +5,7 @@ import AboutMe from "./AboutMe";
 import Education from "./Education";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import Experience from "./Experience"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function Home() {
       <AccoladeList/>
       <AboutMe/>
       <Projects/>
+      <Experience/>
       <Education/>
       <Contact/>
     </main>

@@ -13,7 +13,7 @@ export default function AccoladeList() {
 
             </li>
             <li>
-            <AccoladeCard title="Certifications" alt="Certificate Icon" src="/certificate.png" />
+            <AccoladeCard title="Experience" alt="Certificate Icon" src="/certificate.png" />
 
             </li>
         </ul>
