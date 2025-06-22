@@ -5,16 +5,19 @@ export default function AccoladeList() {
 
         <ul className="flex justify-around  bg-white">
             <li>
-            <AccoladeCard title="Projects" alt="Project Icon" src="/code2.png" />
-
+                <a href="#projects">
+                    <AccoladeCard title="Projects" alt="Project Icon" src="/code2.png" />
+                </a>
             </li>
             <li>
-                <AccoladeCard title="Education" alt="UNT" src="/unt.jpg" />
-
+                <a href="#education">
+                    <AccoladeCard title="Education" alt="UNT" src="/unt.jpg" />
+                </a>
             </li>
             <li>
-            <AccoladeCard title="Experience" alt="Certificate Icon" src="/certificate.png" />
-
+                <a href="#experience">
+                    <AccoladeCard title="Experience" alt="Certificate Icon" src="/certificate.png" />
+                </a>
             </li>
         </ul>
 

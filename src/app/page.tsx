@@ -17,27 +17,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="!scroll-smooth">
+    <main className="scroll-smooth">
       <Navbar/>
       <MiddleHome/>
       <AccoladeList/>
       <AboutMe/>
-      <Projects/>
-      <Experience/>
-      <Education/>
+      <Projects id="projects"/>
+      <Experience id="experience"/>
+      <Education id="education"/>
       <Contact/>
     </main>
   );
 }
-
-/*
-<main className="!scroll-smooth">
-      <Navbar/>
-      <MiddleHome/>
-      <AccoladeList/>
-      <AboutMe/>
-      <Projects/>
-      <Education/>
-      <Contact/>
-    </main>
-*/

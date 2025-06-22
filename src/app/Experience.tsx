@@ -1,7 +1,8 @@
 import SkillCard from "./SkillCard"
 
-export default function Education() {
+export default function Education({id}: {id: string}) {
     return (
+        <section id={id}>
         <div className="bg-black text-white">
             
                 <div className="flex justify-around py-4 ">
@@ -48,5 +49,6 @@ export default function Education() {
 
                 </div>
         </div>
+        </section>
     )
 }
