@@ -97,17 +97,44 @@ export default function BlogPost({
       {/* Content */}
       <div className="px-6 py-6">
         <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-          {/* Option 1: HTML content directly */}
+          {/* Option 1: HTML content directly - expands naturally */}
           {htmlContent && (
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <div 
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+              className="w-full overflow-visible"
+              style={{ minHeight: 'auto', height: 'auto' }}
+            />
           )}
           
-          {/* Option 2: External HTML file */}
+          {/* Option 2: External HTML file with dynamic height */}
           {contentFile && (
             <iframe 
               src={contentFile}
-              className="w-full min-h-96 border-0"
+              className="w-full border-0 overflow-hidden"
+              style={{ 
+                height: '100vh', // Start with viewport height
+                minHeight: '500px',
+                resize: 'vertical' // Allow manual resizing if needed
+              }}
               title="Blog content"
+              onLoad={(e) => {
+                // Auto-resize iframe to content height
+                const iframe = e.target as HTMLIFrameElement;
+                try {
+                  // Wait a bit for content to load
+                  setTimeout(() => {
+                    const contentHeight = iframe.contentWindow?.document.body.scrollHeight;
+                    if (contentHeight && contentHeight > 0) {
+                      iframe.style.height = (contentHeight + 50) + 'px'; // Add some padding
+                    }
+                  }, 100);
+                } catch (error) {
+                  // Cross-origin restrictions may prevent access
+                  console.log('Cannot auto-resize iframe due to cross-origin restrictions');
+                  // Fallback: set a reasonable height
+                  iframe.style.height = '80vh';
+                }
+              }}
             />
           )}
           
@@ -152,11 +179,11 @@ function BlogPostExample() {
     tags: ['Diet', 'Training']
   };
 
-  // Example 2: HTML content
+  // Example 2: HTML content - this will expand automatically
   const htmlExample: BlogPostProps = {
     title: "Advanced Web Development",
     htmlContent: `
-      <h2>Introduction to Modern Web Dev</h2>
+      <h2 style="margin-top: 0;">Introduction to Modern Web Dev</h2>
       <p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>.</p>
       <ul>
         <li>First list item</li>
@@ -164,9 +191,13 @@ function BlogPostExample() {
         <li>Third list item</li>
       </ul>
       <h3>Code Example</h3>
-      <pre><code>const hello = "world";</code></pre>
-      <p>You can also add images:</p>
-      <img src="https://via.placeholder.com/400x200" alt="Placeholder" class="w-full rounded-lg" />
+      <pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 0.5rem;"><code>const hello = "world";
+console.log(hello);</code></pre>
+      <p>Here's a longer content section to demonstrate how the height expands automatically:</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h4 style="margin: 10px 0;">Reduced Spacing Header</h4>
+      <p>This header has reduced spacing as requested. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>And here's even more content to show the automatic expansion working properly.</p>
     `,
     audience: 'Intermediate',
     category: 'Technology',
