@@ -34,14 +34,14 @@ export default function AboutMe() {
                     </div>
                     <div className="font-bold text-left pb-3 text-4xl">Brief Introduction</div>
                     <div className="pb-2 text-xl text-neutral-600">
-                        I&apos;ve always been fascinated by software that deals with the internet. I&apos;ve created a handful of projects to demonstrate some of my knowledge.
+                        I began my software engineering journey at 10 years old making Minecraft mods and servers in Java. Since then I&apos;ve made myself a full stack developer touching several frameworks, platforms, languages, and technologies.
                     </div>
 
                     <div className="pb-2 text-xl text-neutral-600">
-                        I&apos;m in my senior year at the University of North Texas.
+                        I graduated with a bachelors in science in computer science in July 2025 from the University of North Texas. I&apos;ve interned at 2 companies and have made several personal projects.
                     </div>
                     <div className="text-neutral-600 text-xl">
-                        Currently seeking internship experience, employment, or an environment where I can grow within the industry.
+                        Currently I&apos;m seeking employment in an environment where I can elevate my skills and develop a career.
                     </div>
                     <ContactButton />
                 </div>
