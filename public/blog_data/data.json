@@ -1,0 +1,23 @@
+[
+    {
+      "title": "The Art of Cutting Weight",
+      "contentFile": "blog_content/weightloss.html",
+      "audience": "Beginner",
+      "category": "Fitness and Health",
+      "tags": ["Diet", "Body Building"]
+    },
+    {
+      "title": "Advanced React Patterns",
+      "contentFile": "blog_content/react-patterns.html", 
+      "audience": "Experienced",
+      "category": "Technology",
+      "tags": ["Web", "App Dev"]
+    },
+    {
+        "title": "Advanced React Patterns",
+        "contentFile": "blog_content/react-patterns.html", 
+        "audience": "Experienced",
+        "category": "Technology",
+        "tags": ["Web", "App Dev"]
+      }
+  ]
