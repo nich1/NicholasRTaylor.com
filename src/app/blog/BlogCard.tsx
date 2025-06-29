@@ -51,6 +51,7 @@ export default function BlogCard({
   const getTagColor = (tag: Tag): string => {
     const colors = {
       'AI': 'bg-indigo-100 text-indigo-800',
+      'Project': 'bg-purple-100 text-purple-800',
       'Blockchain': 'bg-orange-100 text-orange-800',
       'Web': 'bg-cyan-100 text-cyan-800',
       'App Dev': 'bg-teal-100 text-teal-800',

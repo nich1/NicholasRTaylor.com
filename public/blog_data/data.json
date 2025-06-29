@@ -7,17 +7,17 @@
       "tags": ["Diet", "Body Building"]
     },
     {
-      "title": "Advanced React Patterns",
-      "contentFile": "blog_content/react-patterns.html", 
+      "title": "Updating The Nich Neuron",
+      "contentFile": "blog_content/updating-nich-neuron.html", 
       "audience": "Experienced",
       "category": "Technology",
-      "tags": ["Web", "App Dev"]
+      "tags": ["Project", "Web", "AI"]
     },
     {
-        "title": "Advanced React Patterns",
-        "contentFile": "blog_content/react-patterns.html", 
-        "audience": "Experienced",
+        "title": "AI Frameworks",
+        "contentFile": "blog_content/ai-frameworks.html", 
+        "audience": "Intermediate",
         "category": "Technology",
-        "tags": ["Web", "App Dev"]
+        "tags": ["AI", "App Dev"]
       }
   ]

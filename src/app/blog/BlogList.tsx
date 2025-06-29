@@ -25,7 +25,7 @@ export default function BlogList() {
   
   // Filter states
   const [selectedAudience, setSelectedAudience] = useState<Audience | 'All'>('All');
-  const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('All');
+  const [selectedCategory, setSelectedCategory] = useState<Category | 'All'>('Technology');
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 
   useEffect(() => {
