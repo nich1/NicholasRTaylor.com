@@ -2,7 +2,7 @@ import { getAllPostMeta } from "@/lib/posts";
 
 const SITE_URL = "https://nicholasrtaylor.com";
 const AUTHOR_NAME = "Nicholas Taylor";
-const AUTHOR_EMAIL = "hello@nicholasrtaylor.com";
+const AUTHOR_EMAIL = "nichtaylor516@gmail.com";
 
 function escape(str: string): string {
   return str
