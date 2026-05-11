@@ -1,41 +1,89 @@
-import SkillCard from "./SkillCard"
+import { Chip } from "@/components/chip";
+import { Section, SectionHeading } from "@/components/section";
 
-export default function Education({id}: {id: string}) {
-    return (
-        <section id={id}>
-        <div className="bg-black text-white">
-            
-                <div className="flex justify-around py-4 ">
-                    <div className="text-left w-1/3">
-                        <div className="font-bold text-red-600 text-6xl">Education</div>
-                        <div className="pt-2 text-bold text-4xl text-neutral-400 text-left">Major</div>
-                        <div className="text-3xl text-left text-white"> B.S. Computer Science</div>
-                        <div className=" pt-2 text-bold text-4xl text-neutral-400 text-left">Graduation</div>
-                        <div className=" text-left text-3xl text-white"> Summer, 2025</div>
-                        
-                    </div>
-                    <div className="text-left w-1/3">
-                    
-                    <div className="font-bold text-red-600 text-6xl">Notable Classes</div>
-                    <div className='pt-2 text-bold text-xl text-blue-400 text-left justify-left  flex flex-wrap'>
-                                    <SkillCard title="Software Engineering"/>
-                                    <SkillCard title="Computer Networks"/>
-                                    <SkillCard title="Algorithms"/>
-                                    <SkillCard title="Systems Programming"/>
-                                    <SkillCard title="Linear Algebra"/>
-                                    <SkillCard title="Programming Languages"/>
-                                    <SkillCard title="Digital Logic"/>
-                                    <SkillCard title="Calculus II"/>
-                                    <SkillCard title="Assembly Language"/>
-                                    <SkillCard title="Data Structures and Algorithms"/>
-                                 </div>
-                        
+const NOTABLE_CLASSES = [
+  "Software Engineering",
+  "Foundations of Cybersecurity",
+  "Algorithms",
+  "Software Testing & Empirical Methods",
+  "Systems Programming",
+  "Data Structures & Algorithms",
+  "Programming Languages",
+  "Fundamentals of Database Systems",
+  "Computer Networks",
+  "Digital Logic",
+  "Assembly Language",
+  "Linear Algebra",
+  "Calculus II",
+];
 
-                    </div>
+export default function Education({ id }: { id: string }) {
+  return (
+    <Section id={id}>
+      <SectionHeading eyebrow="Education" title="Where I studied." />
 
-
-                </div>
+      <div className="rounded-lg border border-border bg-bg-subtle/40 p-6 sm:p-8">
+        <div className="grid gap-8 sm:grid-cols-2">
+          <div>
+            <p className="mb-1 font-mono text-xs uppercase tracking-[0.15em] text-fg-muted">
+              Degree
+            </p>
+            <p className="text-lg font-semibold text-fg">
+              B.S. Computer Science
+            </p>
+            <p className="text-base text-fg-muted">
+              University of North Texas
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:block">
+            <div>
+              <p className="mb-1 font-mono text-xs uppercase tracking-[0.15em] text-fg-muted">
+                Graduated
+              </p>
+              <p className="text-lg font-semibold text-fg">Summer 2025</p>
+            </div>
+            <div className="sm:mt-6">
+              <p className="mb-1 font-mono text-xs uppercase tracking-[0.15em] text-fg-muted">
+                GPA
+              </p>
+              <p className="text-lg font-semibold text-fg">3.3</p>
+            </div>
+          </div>
         </div>
-        </section>
-    )
+
+        <details className="group mt-8 border-t border-border pt-6">
+          <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-fg-muted transition-colors hover:text-fg">
+            <span>Notable coursework</span>
+            <ChevronIcon />
+          </summary>
+          <ul className="mt-5 flex flex-wrap gap-1.5">
+            {NOTABLE_CLASSES.map((course) => (
+              <li key={course}>
+                <Chip>{course}</Chip>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </div>
+    </Section>
+  );
+}
+
+function ChevronIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="transition-transform group-open:rotate-180"
+      aria-hidden
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
 }
