@@ -1,0 +1,85 @@
+---
+title: The Evolving World of AI Memory
+date: 2026-05-05
+description: An overview of the current methods used to manage a language model's memory. AI memory is certainly not a solved issue, and there has been rapid innovation and adoption of many different techniques in the past few years. Some are simple and easy to integrate with, others are subjective, others are meant to make the Language Model feel more human-like.
+tags:
+  - AI
+  - Context Window
+  - Embeddings
+  - Graph Rag
+published: true
+readingMinutes: 10
+---
+
+## Context Memory
+When you use chat on ChatGPT or Claude, the application layer is appending the previous
+messages and responses as context. The chat history is not a feature of the LLM, the application layer is just dynamically manipulating the request to the LLM.
+
+So it never truly "learns", the weights of the model don't adapt with the conversation. This is one of the reasons LLMs seem to hallucinate more the deeper you go into conversations,
+the application layer has to make decisions as to how to manage the context. As you approach a threshold in the conversation, they must "compact" the
+conversation. In applications like Claude Code, when it compacts it is just taking the context and asking Claude Code to summarize it, then using that as its context going forward.
+
+
+## The Harness 
+A harness is an orchestration layer around an LLM. It manages context construction, LLM API requests, and tool calls. Claude Code is just a harness for managing the
+context window and sending API requests to Claude models. ChatGPT.com is the same thing, it's just a harness for managing conversation history and
+user facts it stores over multiple chats related to the user.
+
+
+## RAG
+Retrieval-Augmented Generation, or "RAG", is the concept of retrieving data from a source and piping it into the LLM's context window. Ultimately, it is just a system for retrieving
+context. Some common retrieval approaches are using MD files as memory, embeddings-based vector search, and Graph RAG.
+
+### MD Files
+Common in systems like Claude Code, markdown files are typically piped in through an agent harness automatically, or can be marked to be included in the context 
+directly by the user. Markdown files are ultimately just another tool used to pipe context into the request body to the LLM.
+
+This is a more collaborative and empowering way of using AI based applications from a user perspective. It is a way of providing
+long term memory to the application and allows the user to iterate the prompts with time. This opens the discussion for evaluations
+which I will discuss more in a different article.
+
+### Vector Search and Cosine Similarity
+
+
+Commonly used in semantic search and image processing, embedding models transform data into high-dimensional vectors that are then stored in a vector database. When a query
+is made in this type of database, the query must be vectorized first. The database can then use cosine similarity to compare the angle between vectors and
+retrieve the K-nearest-neighbor results, allowing it to find information based on semantic meaning rather than keyword matches.
+
+image of vectorization and embeddings arch
+
+### Graph RAG
+Rather than relying on embeddings in a vector database, Graph RAG builds structured graphs containing nodes and edges representing relationships. When a query is made,
+the system can traverse the graph to retrieve connected information rather than relying on the semantic similarity between vectors. Creating graph relationships can be done by hand,
+which is slow but arguably higher quality data, or you can use LLMs to generate relevant relationships. These relationships can be stored in say a graph database and can be queried to
+pipe context into the LLM request.
+
+image of relationships
+
+## Rolling Memory
+In the late 1800s, Hermann Ebbinghaus studied how quickly people forget information after learning. He observed that memory strength drops rapidly after learning, then levels off over time in an exponential decay shaped graph.
+
+$$
+R(t) = e^{-t/S}, \quad S = S_0 \cdot n^k
+$$
+
+Where $R(t)$ is the retention at time $t$, $S$ is the memory strength, $S_0$ is the initial strength, $n$ is the number of times the memory has been recalled, and $k$ is a reinforcement factor.
+
+As humans, the decay is not fixed. Memories are reinforced through recall and reuse, meaning frequently accessed information persists longer while unused information fades.
+This is fundamentally different from how harness' typically gather context,
+its more discrete than that. Information is pulled from files, embeddings, or databases at inference time. Unless the sources change, the memory is consistent, but it makes it more rigid.
+This gap is what rolling memory systems attempt to address.
+
+MemoryBank is a long-term, reinforcement-based memory architecture for LLM agents that treats memory as something that evolves over time based on usage, rather than a static store of retrieved context.
+Imagine if you had a vector database that had not just an embedding, but a structured memory object containing metadata such as access count, importance score, and timestamps. 
+
+Each time a memory is retrieved or used in a response, its score is increased, making it more likely to be retrieved again in the future. Memories that are never accessed slowly lose importance and eventually fall below a threshold where they are removed. 
+
+Take the vector search RAG method as an example. Instead of storing the raw embeddings now, we store a dot product of the embeddings with the Ebbinghaus
+formula where the maginuted of each vector encodes its current memory strength. The score a memory receives is now not just based on its relevance to the query but is now weighted by how well-remembered it is.
+```sh
+final_score = a * cosine_similarity + b * R(t)
+```
+
+---
+
+Conclusion

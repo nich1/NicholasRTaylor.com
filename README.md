@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NicholasRTaylor.com
 
-## Getting Started
+Personal site and blog, built with [Next.js 14](https://nextjs.org) (App Router), TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 14 App Router, static + SSG routes
+- **Styling:** Tailwind CSS with design tokens defined as CSS custom properties; light/dark theme switchable via `data-theme` with a `prefers-color-scheme` fallback
+- **Typography:** [Geist Sans](https://vercel.com/font) for body, Geist Mono for code-adjacent labels
+- **Blog:** MDX with `next-mdx-remote`, `remark-gfm`, `rehype-slug`, `rehype-autolink-headings`, and `rehype-pretty-code` (Shiki) for dual-theme syntax highlighting
+- **Extras:** dynamic `/og` image generation via `next/og`, `/rss.xml` feed, `sitemap.ts`, `robots.ts`, JSON-LD person schema
+
+## Layout
+
+```
+src/
+  app/
+    layout.tsx              Root layout — fonts, metadata, theme script, skip link
+    page.tsx                Home (Hero, About, Projects, Experience, Education, Contact)
+    globals.css             Design tokens, base styles, Shiki dual-theme CSS
+    blog/
+      page.tsx              Blog index
+      [slug]/page.tsx       MDX post renderer
+    og/route.tsx            Dynamic OG image route (edge)
+    rss.xml/route.ts        RSS 2.0 feed
+    sitemap.ts, robots.ts   SEO routes
+  components/               Reusable chrome — Nav, Footer, Chip, Container, etc.
+  lib/
+    cn.ts                   classname helper
+    posts.ts                Reads content/posts/*.mdx at build time
+    mdx-options.ts          remark + rehype plugin config
+content/
+  posts/                    Blog posts (MDX)
+public/                     Static assets (project thumbnails, résumé)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build
+npm run lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Writing a blog post
 
-## Learn More
+1. Add a new `.mdx` file in `content/posts/` with a slug-friendly filename.
+2. Front-matter:
+   ```yaml
+   ---
+   title: Your title
+   date: 2026-05-03
+   description: One-sentence summary for list / OG / RSS.
+   tags:
+     - some-tag
+   published: true
+   ---
+   ```
+3. Write your content below the front-matter.
+4. Unpublished drafts (`published: false`) are visible in `npm run dev` but excluded from production builds, the sitemap, and the RSS feed.
 
-To learn more about Next.js, take a look at the following resources:
+## TODOs for future me
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Replace `public/Resume2025.pdf` with a current résumé; consider renaming to a stable `public/resume.pdf`.
+- Update the Hero status string and About copy (search for `TODO(nick)` in `src/app/`).
+- Add real project URLs to the `PROJECTS` array in `src/app/Projects.tsx`.
+- Fill in current full-time role at the top of the `EXPERIENCE` array in `src/app/Experience.tsx`.
+- Swap placeholder contact email in `src/app/Contact.tsx` and `src/app/rss.xml/route.ts`.
