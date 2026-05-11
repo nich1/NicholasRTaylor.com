@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s — Nicholas Taylor",
+    template: "%s — Nick Taylor",
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -52,6 +52,13 @@ export const metadata: Metadata = {
     types: {
       "application/rss+xml": "/rss.xml",
     },
+  },
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   robots: {
     index: true,
