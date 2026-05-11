@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -61,8 +62,15 @@ export function Nav() {
           className="group flex items-center gap-2 font-semibold tracking-tight"
           aria-label="Nick Taylor — home"
         >
-          <span className="inline-flex size-7 items-center justify-center rounded-sm bg-fg font-mono text-[0.75rem] font-bold text-bg transition-colors group-hover:bg-accent group-hover:text-accent-fg">
-            NT
+          <span className="relative inline-block size-7 overflow-hidden rounded-sm bg-white ring-1 ring-black/10 transition-colors group-hover:ring-accent">
+            <Image
+              src="/logo.png"
+              alt=""
+              fill
+              sizes="28px"
+              className="object-contain p-0.5"
+              priority
+            />
           </span>
           <span className="hidden sm:inline">Nick Taylor</span>
         </Link>

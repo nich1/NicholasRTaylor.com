@@ -1,7 +1,7 @@
 ---
 title: The Evolving World of AI Memory
-date: 2026-05-05
-description: An overview of the current methods used to manage a language model's memory. AI memory is certainly not a solved issue, and there has been rapid innovation and adoption of many different techniques in the past few years. Some are simple and easy to integrate with, others are subjective, others are meant to make the Language Model feel more human-like.
+date: 2026-05-11
+description: An overview of the current methods used to manage a language model's memory. There are several dynamic ways to manage an LLMs context window. Some are simple and easy to integrate with, others are subjective, others are meant to make the Language Model feel more human-like.
 tags:
   - AI
   - Context Window
@@ -82,4 +82,15 @@ final_score = a * cosine_similarity + b * R(t)
 
 ---
 
-Conclusion
+## When To Use These Methods
+
+Static prompts that can be iterated on in a development environment through evaluations are going to be ideal for most LLM application features.
+Using some form of an internal CMS platform to allow power users to manage and iterate prompts paired with an internal prompt evaluation tool for developing prompts would get most projects exactly what they need. Nothing sexy, just intentional and specific context management through some central ground truth.
+
+Vector search is particularly useful when you want semantically related results. For example if your project uses AI to translate natural language into complex search queries.
+Besides setting up a vector database and embeddings, vector search can be relatively easy to implement. The only pre-processing needed to insert the data to be useful for search is running it through an embeddings model.
+
+Graph RAG requires a bit more effort to make the data as useful as possible since you have to establish the relationships between data points as well.
+From my perspective, graph rag seems to be the strongest tool for dynamic context right now. Graph RAG is also more appealing when relationships between entities matters more than the semantic similarity. 
+
+I struggly to find practical uses for the rolling memory outside of cases where an autonomous agent needs to be hypervigilant and "learn" in some way.
