@@ -10,7 +10,7 @@ readingMinutes: 5
 ---
 
 ## Introduction
-In terms of technical requirements, the project I was working on was three agents that ran one after the other. The first agent would index the pages of a PDF document and 
+In terms of technical requirements, the project I was working on required three agents than ran one after the other. The first agent would index the pages of a PDF document and 
 label page ranges. The second agent would use the indexed page ranges as context to extract several data points. The third agent would then run
 various business rules against the extracted information and re-inspect pages associated with inconsistent data points. 
 
@@ -20,17 +20,17 @@ a response or flag for human-in-the-loop review. The third agent in particular h
 If the turn counts are set too low, the agent struggles to properly complete its task and is more likely to prematurely return lower quality data or flag for review.
 If the turn counts are set too high, the feature can become too expensive or take too long to return.
 
-I was worried about cost, but because of the number of items on the third agent's to-do list, I wanted to give it a high turn count.
-I could foresee a world where the agent needed to use more tool calls, but would be risking the agent costing too much.
+I wanted to give the third agent a high turn count because of the number of items on it's to-do list, but I was worried about cost.
+If I gave the agent too high of a turn count, the feature could go over budget occassionally.
 
 
 ## Dynamic Turn Counts
-I wanted to find a way to make the turn count dynamic. Because of the tools and relative simplicity of the first two agents, I was ok with the static
-turn counts for those. But for the third agent, if I could make sure we didn't exceed a certain API cost per run, I could increase the turn count if needed.
+I wanted to find a way to make the turn count dynamic. Because of the tools and relative simplicity of the first two agents, I was ok with using static
+turn counts for those. If I could make sure I didn't exceed a certain API cost per run for the third agent, I could increase the turn count on demand.
 
-We could store the model metadata and token pricing information to compute how much we're spending per call. If we reach turn 30 and are out of turns, we could keep going as long as we stay under the set cost.
+I could store the model metadata and token pricing information to compute how much I'm spending per call. If I reach turn 30 and am out of turns, I could keep going as long as I stay under the set cost.
 
-Because there is a risk that the model uses more tokens than expected on a given API call, I kept the limit marginally below the threshold.
+Because there is a risk that the model uses more tokens than expected on a given API call, I can keep the limit marginally below the threshold.
 
 ## Conclusion
-This is definitely not always the solution. Because of the unique parameters of the problem, it had a unique alternative solution of using the token data to increase the turn count. I think in most situations, including this one, doing proper evaluations and testing to come up with a viable turn count is needed.
+This is not always the solution. Because of the unique parameters of the problem, it has a unique alternative solution which is using the token data to increase the turn count. I think in most situations, including this one, doing proper evaluations and testing to come up with a viable turn count is needed.
