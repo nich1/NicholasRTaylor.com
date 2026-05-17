@@ -1,10 +1,9 @@
 ---
-title: Token based Turn Counts in Agents
+title: Token Based Turn Counts in Agents
 date: 2026-05-16
-description: Agentic features can be expensive so the number of calls must be intentionally managed. It is quite common to just set a turn count and move on, but for complex agent workflows turn counts can meainingfully reduce the quality of the product. Token based turn counts is a powerful tool for many projects.
+description: Since agentic features can be expensive, the number of API calls must be intentionally managed. It is common to simply set a turn count and move on, but for complex agent workflows, static turn counts can meaningfully reduce the quality of the product. Token based turn counts could provide an alternative solution for high-turn-count agents that need stay within budget.
 tags:
   - AI Agents
-  - Context Window
   - Turn Counts
 published: true
 readingMinutes: 5
@@ -13,12 +12,12 @@ readingMinutes: 5
 ## Introduction
 In terms of technical requirements, the project I was working on was three agents that ran one after the other. The first agent would index the pages of a PDF document and 
 label page ranges. The second agent would use the indexed page ranges as context to extract several data points. The third agent would then run
-various business rules against the extracted information and re-inspect pages of the data points that have inconsistencies. 
+various business rules against the extracted information and re-inspect pages associated with inconsistent data points. 
 
 The proposed solution was to give the agents tools to complete their tasks along with a maximum number of tool calls they could use before they had to give 
 a response or flag for human-in-the-loop review. The third agent in particular had a recommended turn count of 30 because of the types of analysis it was carrying out on dozens of data points.
 
-If the turn counts are set too low, the agent struggles to properly complete its task and is more likely to panic return lower quality data or flag for review.
+If the turn counts are set too low, the agent struggles to properly complete its task and is more likely to prematurely return lower quality data or flag for review.
 If the turn counts are set too high, the feature can become too expensive or take too long to return.
 
 I was worried about cost, but because of the number of items on the third agent's to-do list, I wanted to give it a high turn count.
@@ -27,13 +26,11 @@ I could foresee a world where the agent needed to use more tool calls, but would
 
 ## Dynamic Turn Counts
 I wanted to find a way to make the turn count dynamic. Because of the tools and relative simplicity of the first two agents, I was ok with the static
-turn counts for those. But for the third agent, if I could make sure we didn't exceed a certain api cost per run, I could increase the turn count if needed.
+turn counts for those. But for the third agent, if I could make sure we didn't exceed a certain API cost per run, I could increase the turn count if needed.
 
-If the agent reached the turn count, I could pull the token tracking data we've used so far on the run. Using stored model data and cost per token data for each token type, I could
-compute how much this run has cost us so far. If we reach turn 30 and are out of turns, we could keep going as long as we stay under that number.
+We could store the model metadata and token pricing information to compute how much we're spending per call. If we reach turn 30 and are out of turns, we could keep going as long as we stay under the set cost.
 
-Because there is a risk that the model uses more tokens than expected on a given API call, I kept the limit margainally farther away to where it would never
-practically get close enough for concern to the cost threshold.
+Because there is a risk that the model uses more tokens than expected on a given API call, I kept the limit marginally below the threshold.
 
 ## Conclusion
-This is definitely not always the solution. Because of the unique parameters of the problem, it had a unique alternative solution of using the token data to increase the turn count. I think for all situations, including this one, doing proper evaluations and testing to come up with a viable turn count is needed.
+This is definitely not always the solution. Because of the unique parameters of the problem, it had a unique alternative solution of using the token data to increase the turn count. I think in most situations, including this one, doing proper evaluations and testing to come up with a viable turn count is needed.
