@@ -13,11 +13,11 @@ const EXPERIENCE: ExperienceItem[] = [
   {
     role: "Junior Software Engineer",
     company: "Rocktop.io",
-    period: "SUMMER 2025 – Present",
+    period: "August 2025 – Present",
     description:
       "My team is primarily focused on developing AI-based doc intelligence microservices at scale. My work ranges from scaling LLM API calls to making embeddings based classification services. My time at Rocktop has been spent developing and maintaining the core GenAI microservices as well as building two full stack products leveraging the GenAI ecosystem.",
 
-    tags: ["FastAPI", "ASP.NET", "Vector Search", "Azure Service Bus", "Angular", "C#", "Python"],
+    tags: ["Enterprise Agents", "Vector Search RAG", "FastAPI", "ASP.NET", "Azure Service Bus", "Angular", "React", "Next JS","C#", "Python"],
   },
   {
     role: "Software Engineering Intern",
@@ -26,7 +26,7 @@ const EXPERIENCE: ExperienceItem[] = [
     description:
       "Application development with a focus on generative-AI tooling. Built a VSCode extension, a standalone CLI, and an Azure DevOps extension that integrated an Angular front-end with C# and Python back-end services.",
     tags: [
-      "VsCode Extension",
+      "VS Code Extension",
       "Azure CLI Extension",
       "Angular",
       "C#",
