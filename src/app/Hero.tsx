@@ -27,8 +27,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg text-fg-muted sm:text-xl">
-            Passionate Junior Software Engineer at Rocktop.io&apos;s Generative AI Team
-            developing Scalable, Cutting-Edge, AI-Empowered Applications in the Mortgage Space.
+            Passionate Software Engineer at Rocktop.io&apos;s Generative AI Team
+            developing Scalable Enterprise Agents and Cutting-Edge AI-Empowered Applications in the Mortgage Space.
             Take a look at my Projects and Blog to learn more about my software and interests.
           </p>
 
